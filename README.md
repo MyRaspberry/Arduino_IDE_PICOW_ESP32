@@ -1,7 +1,8 @@
 ## Arduino IDE 2 combi-project
-### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V264
+### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V265
 ### Node-Red flow file
 
+BLOG links:
 [Arduino with PICO W](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=4)
 
 [Arduino with PICO 2W](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=6)
