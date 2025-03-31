@@ -19,11 +19,15 @@ BLOG links:
 [RPI4 setup for Mosquitto and Node-Red and Arduino](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=8)
 
 sample screens:
+
 each board has its own web-page
 ![web-page](https://engineering-news.org/kllfusion01/downloads/PICOW_INA219_home.png)
+
 in local or remote Node-red have a project database (multi SITE feature )
 ![NR project database](https://engineering-news.org/kllfusion01/downloads/Arduino_ESP32S3_MQTT_NR_project.png)
+
 Node-Red example Operation
 ![NR operation](https://engineering-news.org/kllfusion01/downloads/NR_select_operation.png)
+
 run a INA260 with 15A in USA and log/trend via MQTT in Thailand using HIVEMQ
 ![MQTT INA260 15A](https://engineering-news.org/kllfusion01/downloads/PICO2W_INA260_MQTTexplorer.png)
