@@ -2,6 +2,12 @@
 ### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V265
 ### Node-Red flow file
 
+* 4 different boards
+  
+* incl 2 different current mesurements
+  
+* local RPI mosquitto or remote broker TLS ( 66$ or 6$ telemetry ) 
+
 BLOG links:
 
 [Arduino with PICO W](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=4)
@@ -20,7 +26,7 @@ BLOG links:
 
 sample screens:
 
-each board has its own web-page
+each board has its own web-page ( inc. operation )
 ![web-page](https://engineering-news.org/kllfusion01/downloads/PICOW_INA219_home.png)
 
 in local or remote Node-red have a project database (multi SITE feature )
@@ -29,5 +35,5 @@ in local or remote Node-red have a project database (multi SITE feature )
 Node-Red example Operation
 ![NR operation](https://engineering-news.org/kllfusion01/downloads/NR_select_operation.png)
 
-run a INA260 with 15A in USA and log/trend via MQTT in Thailand using HIVEMQ
+run a INA260 with 15A in USA and log/trend via MQTT in Thailand using HIVEMQ and MQTT-explorer
 ![MQTT INA260 15A](https://engineering-news.org/kllfusion01/downloads/PICO2W_INA260_MQTTexplorer.png)
