@@ -17,3 +17,12 @@ BLOG links:
 [Arduino IDE & ACS712 Sensor](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=12)
 
 [RPI4 setup for Mosquitto and Node-Red and Arduino](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=8)
+
+sample screens
+![web-page](https://engineering-news.org/kllfusion01/downloads/PICOW_INA219_home.png)
+
+![NR project database](https://engineering-news.org/kllfusion01/downloads/Arduino_ESP32S3_MQTT_NR_project.png)
+
+![NR operation](https://engineering-news.org/kllfusion01/downloads/NR_select_operation.png)
+
+![MQTT INA260 15A](https://engineering-news.org/kllfusion01/downloads/PICO2W_INA260_MQTTexplorer.png)
