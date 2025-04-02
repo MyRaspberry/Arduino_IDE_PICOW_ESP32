@@ -4,7 +4,7 @@ how to get?
 
 * download ZIP from here
 
-* git clone https://github.com/MyRaspberry/Arduino_IDE_PICOW_ESP32.git
+* `git clone https://github.com/MyRaspberry/Arduino_IDE_PICOW_ESP32.git`
 
 ### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V2xx
 ### Node-Red flow file
