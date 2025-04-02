@@ -1,5 +1,12 @@
 ## Arduino IDE 2 combi-project
-### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V265
+
+how to get? 
+
+* download ZIP from here
+
+* git clone https://github.com/MyRaspberry/Arduino_IDE_PICOW_ESP32.git
+
+### Arduino project PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_V2xx
 ### Node-Red flow file
 
 * 4 different boards
@@ -24,12 +31,14 @@ BLOG links:
 
 [RPI4 setup for Mosquitto and Node-Red and Arduino](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=8)
 
+[RPI3 and Open Media Vault add GIT](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=11)
+
 sample screens:
 
 each board has its own web-page ( inc. operation )
 ![web-page](https://engineering-news.org/kllfusion01/downloads/PICOW_INA219_home.png)
 
-in local or remote Node-red have a project database (multi SITE feature )
+in local or remote Node-red have a project database (multi SITE feature ) NEED TO FILL FIRST!
 ![NR project database](https://engineering-news.org/kllfusion01/downloads/Arduino_ESP32S3_MQTT_NR_project.png)
 
 Node-Red example Operation
