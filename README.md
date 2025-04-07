@@ -27,7 +27,9 @@ BLOG links:
 
 [Arduino IDE & INA219/260 Sensor](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=9)
 
-[Arduino IDE & ACS712 Sensor](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=12)
+[Arduino IDE & ACS712/758 Sensor](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=12)
+
+[my ADS1115 still good?](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=13)
 
 [RPI4 setup for Mosquitto and Node-Red and Arduino](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=8)
 
