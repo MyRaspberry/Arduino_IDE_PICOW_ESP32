@@ -140,7 +140,6 @@
             "adaff9e33e8eedf9",
             "71205e3eef88d6a0",
             "6415ad2668dd11ed",
-            "beacc841adf85bcd",
             "c2063618e7ad60c7",
             "e2175b76c37740ff",
             "5d27bc3405fed108",
@@ -162,7 +161,8 @@
             "860b13fda0e4fc24",
             "34569ec49fc77ed1",
             "290423aa79da1de0",
-            "290ca936724008f8"
+            "7400634e76a2caa3",
+            "beacc841adf85bcd"
         ],
         "x": 14,
         "y": 179,
@@ -195,11 +195,15 @@
             "da6abbc8b4d58b31",
             "3e64373360676cab",
             "ffe2f9e9b05aa710",
-            "c4a8f57c61a9cdf9"
+            "c4a8f57c61a9cdf9",
+            "0fe9f67d1578dd46",
+            "b836d1d35b050757",
+            "63b3406f1053aa1c",
+            "708d0fbd5eef67f5"
         ],
         "x": 34,
         "y": 39,
-        "w": 732,
+        "w": 1112,
         "h": 642
     },
     {
@@ -221,8 +225,8 @@
             "ac81ef18af7d5778"
         ],
         "x": 34,
-        "y": 759,
-        "w": 692,
+        "y": 719,
+        "w": 1112,
         "h": 162
     },
     {
@@ -252,8 +256,7 @@
             "569d0c6dc6d5a930",
             "7fdf92baf67c8e68",
             "52fd273f2d874312",
-            "1870f7d9d291b856",
-            "3519b65ac1ceb870"
+            "1870f7d9d291b856"
         ],
         "x": 54,
         "y": 59,
@@ -665,7 +668,7 @@
             }
         },
         "site": {
-            "name": "KLL MultiSite INA data Dashboard",
+            "name": "MultiSite Dashboard V270",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "true",
@@ -710,7 +713,7 @@
         "tab": "d62b5b98fbf8e9c2",
         "order": 2,
         "disp": true,
-        "width": 32,
+        "width": "32",
         "collapse": false,
         "className": ""
     },
@@ -790,7 +793,7 @@
         "type": "ui_group",
         "name": "LED remote",
         "tab": "4b0c1c791abd961e",
-        "order": 2,
+        "order": 4,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -801,7 +804,7 @@
         "type": "ui_group",
         "name": "FastData",
         "tab": "4b0c1c791abd961e",
-        "order": 3,
+        "order": 5,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -812,7 +815,7 @@
         "type": "ui_group",
         "name": "RELAY remote",
         "tab": "4b0c1c791abd961e",
-        "order": 4,
+        "order": 6,
         "disp": true,
         "width": "6",
         "collapse": false,
@@ -933,16 +936,6 @@
         "className": ""
     },
     {
-        "id": "7dabcb2dce40f75d",
-        "type": "ui_spacer",
-        "z": "df8666f0942f5534",
-        "name": "spacer",
-        "group": "b7f05d3fbda1f7ee",
-        "order": 3,
-        "width": 5,
-        "height": 1
-    },
-    {
         "id": "20f7396c2d314944",
         "type": "ui_group",
         "name": "INA trend",
@@ -1007,10 +1000,42 @@
         "id": "0ee06335a2fe8d01",
         "type": "ui_link",
         "name": "BLOG",
-        "link": "https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=9",
+        "link": "https://kll-engineering.wordpress.com/2025/03/25/back-to-arduino-ide-2/",
         "icon": "open_in_browser",
         "target": "newtab",
         "order": 6
+    },
+    {
+        "id": "b2300e81d176b468",
+        "type": "ui_group",
+        "name": "mqtt data",
+        "tab": "4b0c1c791abd961e",
+        "order": 2,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "45299d6a7bdfcef8",
+        "type": "ui_group",
+        "name": "mqtt log",
+        "tab": "4b0c1c791abd961e",
+        "order": 3,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8ffd11f70791bd8e",
+        "type": "ui_spacer",
+        "z": "df8666f0942f5534",
+        "name": "spacer",
+        "group": "b7f05d3fbda1f7ee",
+        "order": 3,
+        "width": 5,
+        "height": 1
     },
     {
         "id": "b23904f7c5baf383",
@@ -1199,7 +1224,7 @@
         "name": "",
         "label": "",
         "tooltip": "",
-        "place": "\"PICOW/D215/data\"",
+        "place": "\"pls select\"",
         "group": "5ce3d4a8accd7e4e",
         "order": 3,
         "width": 12,
@@ -1248,7 +1273,7 @@
         "width": 3,
         "height": 1,
         "passthru": false,
-        "label": "refresh",
+        "label": "refresh & clear",
         "tooltip": "only needed if Project list changed",
         "color": "",
         "bgcolor": "",
@@ -1258,11 +1283,12 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 120,
+        "x": 140,
         "y": 320,
         "wires": [
             [
-                "9e38f04399f1200f"
+                "9e38f04399f1200f",
+                "7400634e76a2caa3"
             ]
         ]
     },
@@ -1303,14 +1329,14 @@
         "wires": [
             [
                 "adaff9e33e8eedf9",
-                "beacc841adf85bcd",
                 "e2175b76c37740ff",
                 "36679b70aad4689a",
                 "5c83d1219fb40f2a",
                 "eda8ab928cb26971",
                 "1421e9cf2aba04ad",
                 "e5d01637e3ce83aa",
-                "290423aa79da1de0"
+                "290423aa79da1de0",
+                "beacc841adf85bcd"
             ]
         ]
     },
@@ -1383,29 +1409,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 400,
-        "y": 540,
-        "wires": []
-    },
-    {
-        "id": "beacc841adf85bcd",
-        "type": "ui_text",
-        "z": "58bfeb07ae3e987f",
-        "g": "bbd7a0321a6e493b",
-        "group": "e8252a217f34e97d",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "from MQTT site:  {{msg.topic}}",
-        "format": "{{msg.payload}}",
-        "layout": "col-center",
-        "className": "",
-        "style": false,
-        "font": "",
-        "fontSize": "",
-        "color": "#000000",
-        "x": 1150,
-        "y": 480,
+        "y": 600,
         "wires": []
     },
     {
@@ -1807,7 +1811,7 @@
         "z": "58bfeb07ae3e987f",
         "g": "bbd7a0321a6e493b",
         "name": "get DOUTs",
-        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";  // fake for DOUTS\n    //node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\nmsg.topic= \"Dout\"\nreturn msg;",
+        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";  // fake for DOUTS\n    node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\nmsg.topic= \"Dout\"\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2435,14 +2439,61 @@
         ]
     },
     {
-        "id": "290ca936724008f8",
-        "type": "comment",
+        "id": "7400634e76a2caa3",
+        "type": "function",
         "z": "58bfeb07ae3e987f",
         "g": "bbd7a0321a6e493b",
-        "name": "rev 2.6.5 rename all AxV to Ax / also in database",
-        "info": "",
-        "x": 260,
-        "y": 740,
+        "name": "CLEAR trend",
+        "func": "msg.payload = [];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1220,
+        "wires": [
+            [
+                "bacfc73180a703cf",
+                "89ca3858d8e9489d",
+                "37973cb1e777eca1",
+                "d1761175505842e2",
+                "d13ab8c853edccf3",
+                "d30870f229d68c6e",
+                "712f9fd520fb2906",
+                "860b13fda0e4fc24",
+                "83df1e8af9f7370d",
+                "72baa86efd2cf0e7",
+                "76e9ff4a0d480508",
+                "ab7841b9dc0e18af",
+                "a18c7928f9d75863",
+                "fe6ca909dc1abbb4",
+                "5d27bc3405fed108",
+                "11f31d3e4f777f82"
+            ]
+        ]
+    },
+    {
+        "id": "beacc841adf85bcd",
+        "type": "ui_text",
+        "z": "58bfeb07ae3e987f",
+        "g": "bbd7a0321a6e493b",
+        "group": "e8252a217f34e97d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "from MQTT site:  {{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1150,
+        "y": 480,
         "wires": []
     },
     {
@@ -2582,8 +2633,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 1,
-        "x": 370,
-        "y": 800,
+        "x": 390,
+        "y": 760,
         "wires": [
             [
                 "0da9fd2d6166226c",
@@ -2606,8 +2657,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 610,
-        "y": 800,
+        "x": 1030,
+        "y": 760,
         "wires": []
     },
     {
@@ -2623,8 +2674,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 300,
-        "y": 880,
+        "x": 520,
+        "y": 820,
         "wires": [
             [
                 "a303ab02567a27b8"
@@ -2670,8 +2721,8 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 590,
-        "y": 880,
+        "x": 1010,
+        "y": 840,
         "wires": [
             []
         ]
@@ -2950,7 +3001,7 @@
         "name": "",
         "label": "Site Select",
         "tooltip": "",
-        "place": "\"PICOW/D215/data\"",
+        "place": "\"pls select\"",
         "group": "b7f05d3fbda1f7ee",
         "order": 1,
         "width": 0,
@@ -3051,7 +3102,7 @@
         "finalize": "",
         "libs": [],
         "x": 170,
-        "y": 800,
+        "y": 760,
         "wires": [
             [
                 "b48bf327ef824c58"
@@ -3076,8 +3127,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 610,
-        "y": 840,
+        "x": 1030,
+        "y": 800,
         "wires": []
     },
     {
@@ -3098,7 +3149,7 @@
         "font": "",
         "fontSize": "",
         "color": "#000000",
-        "x": 620,
+        "x": 1040,
         "y": 640,
         "wires": []
     },
@@ -3120,8 +3171,8 @@
         "font": "",
         "fontSize": 16,
         "color": "#000000",
-        "x": 630,
-        "y": 600,
+        "x": 1030,
+        "y": 520,
         "wires": []
     },
     {
@@ -3164,7 +3215,8 @@
         "wires": [
             [
                 "3e64373360676cab",
-                "6f386de206b7e482"
+                "6f386de206b7e482",
+                "0fe9f67d1578dd46"
             ]
         ]
     },
@@ -3174,7 +3226,7 @@
         "z": "df8666f0942f5534",
         "g": "bd015006a52b88b2",
         "name": "get DOUTs",
-        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";  // fake for DOUTS\n    //node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\n// old //msg.payload = msg.payload.DOUTS;\nmsg.topic= \"Dout\"\nreturn msg;",
+        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";\n    // fake for DOUTS\n    //node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\nmsg.topic= \"Dout\"\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -3262,13 +3314,15 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 650,
+        "x": 530,
         "y": 960,
         "wires": [
             [
                 "802afaafedeae7f4",
                 "d30aa8947d7178b9",
-                "661678d5680802a4"
+                "661678d5680802a4",
+                "f60e717f1643e493",
+                "b836d1d35b050757"
             ]
         ]
     },
@@ -3287,6 +3341,118 @@
         "statusType": "auto",
         "x": 1080,
         "y": 960,
+        "wires": []
+    },
+    {
+        "id": "f60e717f1643e493",
+        "type": "function",
+        "z": "df8666f0942f5534",
+        "name": "CLEAR trend",
+        "func": "msg.payload = [];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 750,
+        "y": 920,
+        "wires": [
+            [
+                "ac81ef18af7d5778",
+                "a303ab02567a27b8",
+                "c90ec68768661fb6",
+                "6f386de206b7e482",
+                "0fe9f67d1578dd46",
+                "708d0fbd5eef67f5"
+            ]
+        ]
+    },
+    {
+        "id": "0fe9f67d1578dd46",
+        "type": "ui_text",
+        "z": "df8666f0942f5534",
+        "g": "bd015006a52b88b2",
+        "group": "b2300e81d176b468",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "mqtt data",
+        "label": "from MQTT site:  {{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1020,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "b836d1d35b050757",
+        "type": "function",
+        "z": "df8666f0942f5534",
+        "g": "bd015006a52b88b2",
+        "name": "SITE SELECT get */log",
+        "func": "var getSetSite = flow.get('getSetSite'); // after select site operation PICOW/D215/data\n\nmsg.topic = getSetSite.replace(/data/g, \"log\");;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 440,
+        "wires": [
+            [
+                "63b3406f1053aa1c"
+            ]
+        ]
+    },
+    {
+        "id": "63b3406f1053aa1c",
+        "type": "mqtt in",
+        "z": "df8666f0942f5534",
+        "g": "bd015006a52b88b2",
+        "name": "mqtt",
+        "topic": "",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "09f8bde706ac62e0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 1,
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "708d0fbd5eef67f5"
+            ]
+        ]
+    },
+    {
+        "id": "708d0fbd5eef67f5",
+        "type": "ui_text",
+        "z": "df8666f0942f5534",
+        "g": "bd015006a52b88b2",
+        "group": "45299d6a7bdfcef8",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "name": "mqtt log",
+        "label": "from MQTT site:  {{msg.topic}}",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1020,
+        "y": 440,
         "wires": []
     },
     {
@@ -3568,7 +3734,7 @@
         "z": "adb1ad6d0accd50e",
         "g": "e18dc59e77aa9122",
         "name": "select specific /data records",
-        "func": "msg.payload = msg.payload;\nmsg.topic= msg.topic;\n// esp32s3, pico w, pico 2w   ( 3 sites /projects to database AND REMOTE broker )\nif ( \n  msg.topic == \"ESP32S3/D216/data\" || msg.topic == \"PICOW/D215/data\" || msg.topic == \"PICOW/D217/data\" || msg.topic == \"ESP32S/D214/data\"\n) \n{\n  return msg;\n}",
+        "func": "msg.payload = msg.payload;\nmsg.topic= msg.topic;\n// esp32s3, pico w, pico 2w, esp32s   ( 4 sites /projects to database AND REMOTE broker )\nif ( \n     msg.topic == \"ESP32S3/D216/data\"\n  || msg.topic == \"PICOW/D215/data\"\n  || msg.topic == \"PICOW/D217/data\"\n  || msg.topic == \"ESP32S/D214/data\"\n) \n{\n  return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
@@ -3579,7 +3745,8 @@
         "y": 440,
         "wires": [
             [
-                "ab30fb7cdd2a54df"
+                "ab30fb7cdd2a54df",
+                "c01bd6a2cb7d7ace"
             ]
         ]
     },
@@ -3588,9 +3755,9 @@
         "type": "comment",
         "z": "adb1ad6d0accd50e",
         "g": "e18dc59e77aa9122",
-        "name": "pls edit here what data to be saved to db",
+        "name": "pls edit here what SITE /data to be saved to db",
         "info": "",
-        "x": 380,
+        "x": 400,
         "y": 400,
         "wires": []
     },
@@ -3610,32 +3777,21 @@
         "type": "function",
         "z": "adb1ad6d0accd50e",
         "g": "8d14613e66deae4a",
-        "name": "select specific /data AND /log records",
-        "func": "msg.payload = msg.payload;\nmsg.topic= msg.topic;\n// esp32s3, pico w, pico 2w   ( 3 sites /projects to database AND REMOTE broker )\nif ( \n     msg.topic == \"ESP32S3/D216/data\" \n  || msg.topic == \"PICOW/D215/data\" \n  || msg.topic == \"PICOW/D217/data\"\n  || msg.topic == \"ESP32S/D214/data\"\n  || msg.topic == \"ESP32S3/D216/log\" \n  || msg.topic == \"PICOW/D215/log\" \n  || msg.topic == \"PICOW/D217/log\"\n  || msg.topic == \"ESP32S/D214/log\"\n) \n{\n  return msg;\n}",
+        "name": "select specific /log records",
+        "func": "msg.payload = msg.payload;\nmsg.topic= msg.topic;\n// esp32s3, pico w, pico 2w, old esp32s  ( 4 sites /projects to database AND REMOTE broker )\nif ( \n     msg.topic == \"ESP32S/D214/log\"\n  || msg.topic == \"PICOW/D215/log\" \n  || msg.topic == \"ESP32S3/D216/log\" \n  || msg.topic == \"PICOW/D217/log\"\n) \n{\n  return msg;\n}",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 390,
+        "x": 360,
         "y": 600,
         "wires": [
             [
                 "c01bd6a2cb7d7ace"
             ]
         ]
-    },
-    {
-        "id": "3519b65ac1ceb870",
-        "type": "comment",
-        "z": "adb1ad6d0accd50e",
-        "g": "e18dc59e77aa9122",
-        "name": "rev 2.6.5 rename all AxV to Ax / also in database",
-        "info": "",
-        "x": 600,
-        "y": 500,
-        "wires": []
     },
     {
         "id": "d4463c84c26b9467",
