@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "27c566c7be19f07c",
+        "type": "tab",
+        "label": "LOG_DB",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "9a24826778a08d02",
         "type": "group",
         "z": "4923970536323155",
@@ -440,6 +448,70 @@
         "h": 162
     },
     {
+        "id": "72c307911480b653",
+        "type": "group",
+        "z": "27c566c7be19f07c",
+        "name": "MQTT to LOG DATABASE",
+        "style": {
+            "stroke": "#92d04f",
+            "fill": "#c8e7a7",
+            "label": true,
+            "color": "#b797cf"
+        },
+        "nodes": [
+            "276e4c63874ca929",
+            "84c8bf81739bbb40",
+            "08a1f9dcbf716ada",
+            "c04fa6cf1f1f21b3",
+            "93c0287233770ce8",
+            "bbb56b8ef9b0dd2b",
+            "2798ae94c7d7067e",
+            "b7cd319c65890ec9",
+            "97129c311c76b761",
+            "859cef8150cee749",
+            "f1750739df3e0508",
+            "5b0addecaa2cc0ac",
+            "620de3b3f7f53d1c",
+            "2099f1dbe9557e6b",
+            "228ad4ee62b32ad8"
+        ],
+        "x": 34,
+        "y": 39,
+        "w": 1222,
+        "h": 482
+    },
+    {
+        "id": "e6aabb0c4de5e395",
+        "type": "group",
+        "z": "27c566c7be19f07c",
+        "name": "LOG LIST db to UI",
+        "style": {
+            "stroke": "#ffC000",
+            "fill": "#ffdf7f",
+            "label": true,
+            "color": "#6f2fa0"
+        },
+        "nodes": [
+            "2f3867363da1309f",
+            "c09fe598fa31a335",
+            "e811e2883457bdb5",
+            "6e309e41873a021a",
+            "cf3d19f339cafa63",
+            "da0febca50556b3a",
+            "b3886e1ca1311b9c",
+            "c8a5054af22a50b4",
+            "0276915f05e51a19",
+            "5cc343054100b455",
+            "17d865e50fc113af",
+            "ad815b5faa5641e4",
+            "64b66c0c0af92604"
+        ],
+        "x": 44,
+        "y": 559,
+        "w": 1092,
+        "h": 302
+    },
+    {
         "id": "34569ec49fc77ed1",
         "type": "group",
         "z": "58bfeb07ae3e987f",
@@ -584,7 +656,7 @@
         "type": "ui_tab",
         "name": "PROJECT_LIST",
         "icon": "dashboard",
-        "order": 5,
+        "order": 6,
         "disabled": false,
         "hidden": false
     },
@@ -668,7 +740,7 @@
             }
         },
         "site": {
-            "name": "MultiSite Dashboard V270",
+            "name": "MultiSite Dashboard V270c",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "true",
@@ -1003,7 +1075,7 @@
         "link": "https://kll-engineering.wordpress.com/2025/03/25/back-to-arduino-ide-2/",
         "icon": "open_in_browser",
         "target": "newtab",
-        "order": 6
+        "order": 7
     },
     {
         "id": "b2300e81d176b468",
@@ -1036,6 +1108,26 @@
         "order": 3,
         "width": 5,
         "height": 1
+    },
+    {
+        "id": "34a8b03539e672c1",
+        "type": "ui_tab",
+        "name": "LOG_LIST",
+        "icon": "dashboard",
+        "order": 5,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "a35a0bb07a0caabc",
+        "type": "ui_group",
+        "name": "SQLread",
+        "tab": "34a8b03539e672c1",
+        "order": 1,
+        "disp": true,
+        "width": 37,
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "b23904f7c5baf383",
@@ -1247,7 +1339,8 @@
         "wires": [
             [
                 "d6bbc93663a39f2b",
-                "71205e3eef88d6a0"
+                "71205e3eef88d6a0",
+                "7400634e76a2caa3"
             ]
         ]
     },
@@ -1811,7 +1904,7 @@
         "z": "58bfeb07ae3e987f",
         "g": "bbd7a0321a6e493b",
         "name": "get DOUTs",
-        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";  // fake for DOUTS\n    node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\nmsg.topic= \"Dout\"\nreturn msg;",
+        "func": "if (msg.payload.hasOwnProperty(\"DOUTS\")) {\n    msg.payload = msg.payload.DOUTS;\n    //node.warn(\"all good\");\n} else {\n    msg.payload = \"-0,-0,-0,-0,\";\n    //node.warn(msg.topic + \":\" + String(msg.payload));\n}\n\nmsg.topic= \"Dout\"\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -2470,7 +2563,8 @@
                 "a18c7928f9d75863",
                 "fe6ca909dc1abbb4",
                 "5d27bc3405fed108",
-                "11f31d3e4f777f82"
+                "11f31d3e4f777f82",
+                "beacc841adf85bcd"
             ]
         ]
     },
@@ -5842,5 +5936,550 @@
         "wires": [
             []
         ]
+    },
+    {
+        "id": "276e4c63874ca929",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "RPI MQTT local broker",
+        "info": "",
+        "x": 160,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "84c8bf81739bbb40",
+        "type": "sqlite",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "mydb": "5855394b5a9476ac",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 1080,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "08a1f9dcbf716ada",
+        "type": "function",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "save to DB",
+        "func": "// v1.3 PICO W \nconst sqlI = \"INSERT INTO mqtt_log (timedate,timedates,topic,payloads) VALUES \";\nvar sql = \"\";\n\nvar now = new Date();\nvar epoch = now.getTime();\n//const nows = (new Date()).toISOString().slice(0, 19).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst nows = (new Date(epoch)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\nvar UTC_nows = now.toISOString().slice(0, 19).replace(/-/g, \"-\").replace(\"T\", \" \");\n\n//node.warn(nows);\n\n// get some content we want save optionally to additional db columns\n\n// as now payload is JSON must go back to string and from \" to ' to save payload in a db string\nvar payloads = JSON.stringify(msg.payload);   // JSON to string\npayloads=payloads.replace(/\"/g, \"\\'\");        // \" to ' or get SQL error\n\nsql = sqlI;\nsql += \"(\" + epoch;\n//sql += \",\\\"\" + nows + \"\\\"\";  // waste of space but makes it readable\nsql += \",\\\"\" + UTC_nows + \"\\\"\";  // waste of space but makes it readable\nsql += \",\\\"\"+msg.topic+ \"\\\"\";\nsql += \",\\\"\" + payloads + \"\\\"\";\n\nsql += \" )\";\nmsg.topic = sql;\nmsg.payload = \"LOG save to DB\";\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 420,
+        "wires": [
+            [
+                "5b0addecaa2cc0ac"
+            ]
+        ]
+    },
+    {
+        "id": "c04fa6cf1f1f21b3",
+        "type": "debug",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "debug sql insert",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "93c0287233770ce8",
+        "type": "inject",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "create table \"mqtt_log\"   (id,timedate,timedates,topic,payloads) and even database file",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "CREATE TABLE  IF NOT EXISTS \"mqtt_log\" ( \"id\" INTEGER, \"timedate\" INTEGER, \"timedates\" TEXT, \"topic\" TEXT, \"payloads\" TEXT  );",
+        "payload": "",
+        "payloadType": "date",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "5b0addecaa2cc0ac"
+            ]
+        ]
+    },
+    {
+        "id": "bbb56b8ef9b0dd2b",
+        "type": "inject",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "delete table",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DROP TABLE \"mqtt_log\";",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 240,
+        "wires": [
+            [
+                "5b0addecaa2cc0ac"
+            ]
+        ]
+    },
+    {
+        "id": "2798ae94c7d7067e",
+        "type": "inject",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "empty table",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "DELETE FROM \"mqtt_log\";",
+        "payload": "",
+        "payloadType": "date",
+        "x": 170,
+        "y": 320,
+        "wires": [
+            [
+                "5b0addecaa2cc0ac"
+            ]
+        ]
+    },
+    {
+        "id": "b7cd319c65890ec9",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "SETUP: manual database operation / create file & table mqtt_log",
+        "info": "",
+        "x": 290,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "97129c311c76b761",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "optional / manual database operation / delete table mqtt_log",
+        "info": "",
+        "x": 290,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "859cef8150cee749",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "optional / manual database operation / empty table mqtt_log",
+        "info": "",
+        "x": 300,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "f1750739df3e0508",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "RPI SQLite3 db",
+        "info": "",
+        "x": 140,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "5b0addecaa2cc0ac",
+        "type": "function",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "add",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 420,
+        "wires": [
+            [
+                "84c8bf81739bbb40",
+                "c04fa6cf1f1f21b3"
+            ]
+        ]
+    },
+    {
+        "id": "620de3b3f7f53d1c",
+        "type": "mqtt in",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "",
+        "topic": "#",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "09f8bde706ac62e0",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 420,
+        "wires": [
+            [
+                "2099f1dbe9557e6b"
+            ]
+        ]
+    },
+    {
+        "id": "2099f1dbe9557e6b",
+        "type": "function",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "select specific /log records",
+        "func": "msg.payload = msg.payload;\nmsg.topic= msg.topic;\n// esp32s3, pico w, pico 2w, esp32s   ( 4 sites /projects to database AND REMOTE broker )\nif ( \n     msg.topic == \"ESP32S3/D216/log\"\n  || msg.topic == \"PICOW/D215/log\"\n  || msg.topic == \"PICOW/D217/log\"\n  || msg.topic == \"ESP32S/D214/log\"\n) \n{\n  return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 420,
+        "wires": [
+            [
+                "08a1f9dcbf716ada"
+            ]
+        ]
+    },
+    {
+        "id": "228ad4ee62b32ad8",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "72c307911480b653",
+        "name": "pls edit here what SITE /log to be saved to db",
+        "info": "",
+        "x": 370,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "2f3867363da1309f",
+        "type": "sqlite",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "mydb": "5855394b5a9476ac",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 750,
+        "y": 720,
+        "wires": [
+            [
+                "b3886e1ca1311b9c",
+                "5cc343054100b455"
+            ]
+        ]
+    },
+    {
+        "id": "c09fe598fa31a335",
+        "type": "ui_template",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "group": "a35a0bb07a0caabc",
+        "name": "LOG LIST",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "format": "<table style=\"width:100%\">\n  <tr>\n    <th>Time UTC</th>\n    <th>Topic</th>\n    <th>Payload</th>\n  </tr>\n  \n  <tr ng-repeat=\"x in msg.payload \">\n    <td>{{msg.payload[$index].timedates}}</td>\n    <td>{{msg.payload[$index].topic}}</td>\n    <td>{{msg.payload[$index].payloads}}</td>\n  </tr>\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1010,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e811e2883457bdb5",
+        "type": "ui_button",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "",
+        "group": "a35a0bb07a0caabc",
+        "order": 3,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "+ h",
+        "tooltip": "next hour",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "up",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 760,
+        "wires": [
+            [
+                "cf3d19f339cafa63"
+            ]
+        ]
+    },
+    {
+        "id": "6e309e41873a021a",
+        "type": "ui_button",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "",
+        "group": "a35a0bb07a0caabc",
+        "order": 1,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "- h",
+        "tooltip": "one hour back",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "down",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 140,
+        "y": 720,
+        "wires": [
+            [
+                "cf3d19f339cafa63"
+            ]
+        ]
+    },
+    {
+        "id": "cf3d19f339cafa63",
+        "type": "function",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "datarange LIST",
+        "func": "var now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour \nvar getrecs = context.get('getrecs')||epoch;\nif (msg.payload == 'up') getrecs += hmillis;\nif (msg.payload == 'down') getrecs -= hmillis;\nif (msg.payload == 'init') getrecs = epoch;\nif ( getrecs < 0 ) getrecs = 0;\nif ( getrecs > epoch ) getrecs = epoch; // limit to now\ncontext.set('getrecs',getrecs); // save back to global\n\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n//var getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_log WHERE timedate BETWEEN \"+hstart+\" AND \"+hend+\" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\n\nmsg.payload = \"from \"+hstarts+\" to \"+hends+\" UTC\"; // for debug only\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "var now = new Date();\nvar epoch = now.getTime(); // in millis\n\nvar getrecs = context.get('getrecs') || epoch;\n\ncontext.set('getrecs', getrecs); // save back to global\n",
+        "finalize": "",
+        "libs": [],
+        "x": 370,
+        "y": 720,
+        "wires": [
+            [
+                "da0febca50556b3a",
+                "2f3867363da1309f",
+                "17d865e50fc113af"
+            ]
+        ]
+    },
+    {
+        "id": "da0febca50556b3a",
+        "type": "debug",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "LOG SQL",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "b3886e1ca1311b9c",
+        "type": "debug",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "LOG records",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "c8a5054af22a50b4",
+        "type": "debug",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "LOG LIST",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1010,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "0276915f05e51a19",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "ui LOG_LIST function: one hour from DB",
+        "info": "",
+        "x": 230,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "5cc343054100b455",
+        "type": "function",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "format HTML table",
+        "func": "\nif (msg.payload.length > 0) {\n  var data = \"[\";\n\n  for (var i = 0; i < msg.payload.length; i++) {  // take the dbrecord appart\n\n    var timedates = msg.payload[i].timedates;\n    var topic = msg.payload[i].topic;\n    var payloads = msg.payload[i].payloads;\n\n\n    data += \"{ \";\n    data += \"\\\"timedates\\\":\\\"\" + timedates + \"\\\"\";\n    data += \", \\\"topic\\\":\\\"\" + topic + \"\\\"\";\n    data += \", \\\"payloads\\\":\\\"\" + payloads + \"\\\"\";\n    data += \" }\";\n    if (i < (msg.payload.length - 1)) {\n      data += \",\"\n    } else {\n      data += \"]\"\n    }\n  }\n\n  var jsondata = JSON.parse(data);\n\n  msg.payload = jsondata;  \n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 800,
+        "wires": [
+            [
+                "c09fe598fa31a335",
+                "c8a5054af22a50b4"
+            ]
+        ]
+    },
+    {
+        "id": "17d865e50fc113af",
+        "type": "ui_text",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "group": "a35a0bb07a0caabc",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "name": "",
+        "label": "time range",
+        "format": "{{msg.payload}}",
+        "layout": "col-center",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 1020,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "ad815b5faa5641e4",
+        "type": "inject",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "INIT LOG SQL",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "start",
+        "payload": "init",
+        "payloadType": "str",
+        "x": 170,
+        "y": 680,
+        "wires": [
+            [
+                "cf3d19f339cafa63"
+            ]
+        ]
+    },
+    {
+        "id": "64b66c0c0af92604",
+        "type": "comment",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "table: mqtt_log  (id,timedate,timedates,topic,payloads) ",
+        "info": "",
+        "x": 270,
+        "y": 600,
+        "wires": []
     }
 ]
