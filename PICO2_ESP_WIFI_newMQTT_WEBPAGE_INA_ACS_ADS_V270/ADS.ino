@@ -16,6 +16,8 @@
 
 #ifdef use_ADS1115
 
+bool ADS_OK = false;
+
 #include <Adafruit_ADS1X15.h>
 
 Adafruit_ADS1115 ads;  /* Use this for the 16-bit version */
@@ -50,11 +52,17 @@ void setup_ADS1115() {
   // ads.setGain(GAIN_EIGHT);      // 8x gain   +/- 0.512V  1 bit = 0.25mV   0.015625mV
   // ads.setGain(GAIN_SIXTEEN);    // 16x gain  +/- 0.256V  1 bit = 0.125mV  0.0078125mV
 
+  msg += "gpio try connect ADS1115 expect SDA on ";
+  msg += SDA;
+  msg += ", and SCL on ";
+  msg += SCL;
+  msg += " \n";
   if (!ads.begin()) {
     msg+= "gpio Failed to initialize ADS1115 on 0x48\n";
     //while (1);
   } else {
     msg+= "gpio ADS1115 connected\n";
+    ADS_OK = true;
   }
   Serial.println(msg);
   BootLog += msg + "\n";
@@ -62,15 +70,21 @@ void setup_ADS1115() {
 
 
 void calc_ADS1115() {
-  result01 = ads.readADC_Differential_0_1();
-  result23 = ads.readADC_Differential_2_3();
-  A01mV = result01 * multiplier;
-  A23mV = result23 * multiplier;
+  if ( ADS_OK ) {
+    result01 = ads.readADC_Differential_0_1();
+    result23 = ads.readADC_Differential_2_3();
+    A01mV = result01 * multiplier;
+    A23mV = result23 * multiplier;
 
-  //Serial.print("A01: "); Serial.print(A01mV,3); Serial.println(" mV"); Serial.print(" , A23: "); Serial.print(A23mV,3); Serial.println(" mV");
-  // temporary overwrite A0 A1
-  sensorA0val = A01mV;
-  sensorA1val = A23mV;
+    //Serial.print("A01: "); Serial.print(A01mV,3); Serial.println(" mV"); Serial.print(" , A23: "); Serial.print(A23mV,3); Serial.println(" mV");
+    // temporary overwrite A0 A1
+    sensorA0val = A01mV;
+    sensorA1val = A23mV;
+  } else { // _____________________________ we want show that this is not A0 A1 instead it's BAD ADS data ( as you enabled ADS )
+    sensorA0val = -0.007;
+    sensorA1val = -0.007;
+  }
+
 }
 
 

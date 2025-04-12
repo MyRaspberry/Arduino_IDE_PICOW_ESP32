@@ -35,21 +35,22 @@ bool INA_OK = false;
 
 void make_INA219(){
   //Serial.println("make_INA219");
-  shuntvoltage = ina219.getShuntVoltage_mV();
-  busvoltage = ina219.getBusVoltage_V();
-  current_mA = ina219.getCurrent_mA();
-  //power_mW = ina219.getPower_mW();
-  loadvoltage = busvoltage + (shuntvoltage / 1000);
-  power_mW = loadvoltage * current_mA; // calc NOT measure
-  if ( false ) {
-    Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
-    Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
-    Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
-    Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
-    //Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
-    Serial.println("");
-  }
   if ( INA_OK ) {
+    shuntvoltage = ina219.getShuntVoltage_mV();
+    busvoltage = ina219.getBusVoltage_V();
+    current_mA = ina219.getCurrent_mA();
+    //power_mW = ina219.getPower_mW();
+    loadvoltage = busvoltage + (shuntvoltage / 1000);
+    power_mW = loadvoltage * current_mA; // calc NOT measure
+    if ( false ) {
+      Serial.print("Bus Voltage:   "); Serial.print(busvoltage); Serial.println(" V");
+      Serial.print("Shunt Voltage: "); Serial.print(shuntvoltage); Serial.println(" mV");
+      Serial.print("Load Voltage:  "); Serial.print(loadvoltage); Serial.println(" V");
+      Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
+      //Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
+      Serial.println("");
+    }
+  
     MQTTina  = "";
     MQTTina += ", \"VDC\": ";
     MQTTina += String(loadvoltage,3);
@@ -64,11 +65,16 @@ void make_INA219(){
 
 void setup_INA219() {
   // Initialize the INA219.
+  msg = "gpio try connect INA219 expect SDA on ";
+  msg += SDA;
+  msg += ", and SCL on ";
+  msg += SCL;
+  msg += " \n";
   if (! ina219.begin()) {
-      msg="gpio Failed to find INA219 chip";
+      msg += "gpio Failed to find INA219 chip";
     } else {
       INA_OK= true;
-      msg="gpio Measuring voltage, current, and power with INA219 board";
+      msg += "gpio Measuring voltage, current, and power with INA219 board";
     }
     Serial.println(msg);
     BootLog += msg + "\n";
@@ -78,17 +84,18 @@ void setup_INA219() {
 
 void make_INA260(){
   //Serial.println("make_INA260");
-  busvoltage_mV = ina260.readBusVoltage();
-  current_mA = ina260.readCurrent();
-  power_mW = ina260.readPower();
-  // power_mW = busvoltage_mV * current_mA ; // calc NOT measure !! uW
-  if ( false ) {
-    Serial.print("Bus Voltage:   "); Serial.print(busvoltage_mV); Serial.println(" mV");
-    Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
-    Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
-    Serial.println("");
-  }
   if ( INA_OK ) {
+    busvoltage_mV = ina260.readBusVoltage();
+    current_mA = ina260.readCurrent();
+    power_mW = ina260.readPower();
+    // power_mW = busvoltage_mV * current_mA ; // calc NOT measure !! uW
+    if ( false ) {
+      Serial.print("Bus Voltage:   "); Serial.print(busvoltage_mV); Serial.println(" mV");
+      Serial.print("Current:       "); Serial.print(current_mA); Serial.println(" mA");
+      Serial.print("Power:         "); Serial.print(power_mW); Serial.println(" mW");
+      Serial.println("");
+    }
+
     MQTTina  = "";
     MQTTina += ", \"VDC\": ";
     MQTTina += String(busvoltage_mV/1000.0,3);
@@ -106,11 +113,16 @@ void make_INA260(){
 
 void setup_INA260() {
   // Initialize the INA260.
+  msg = "gpio try connect INA260, expect SDA on ";
+  msg += SDA;
+  msg += ", and SCL on ";
+  msg += SCL;
+  msg += " \n";
   if (! ina260.begin()) {
-    msg="gpio Failed to find INA260 chip";
+    msg += "gpio Failed to find INA260 chip";
   } else {
     INA_OK = true;
-    msg="gpio Measuring voltage, current, and power with INA260 board";
+    msg += "gpio Measuring voltage, current, and power with INA260 board";
   }
   Serial.println(msg);
   BootLog += msg + "\n";

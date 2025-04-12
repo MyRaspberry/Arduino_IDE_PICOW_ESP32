@@ -1,17 +1,18 @@
 // file: secrets.h
 
-#define use4RELAY
+//#define use4RELAY
 
 // I2S: currently can only select 1 INA at default x40
 //#define use_INA_219
 //#define use_INA_260
 
+// ACS and ADS overwrite A0 input so also can NOT use both
 //#define use_ADS1115  // at default x48
 
 //#define useACSxxx
 #ifdef useACSxxx
-//#define useACS712
-#define useACS758
+#define useACS712
+//#define useACS758
 #endif
 
 #define SECRET_SSID "<SSID>"
@@ -25,7 +26,7 @@
 
 
 #define PROJECT "PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_ACS_ADS"
-#define REV "v2.7.0"
+#define REV "v2.7.0c"
 
 #define use_boot_ms  // print boot timing
 
@@ -66,9 +67,9 @@
 
 #ifdef useREMOTE_BROKER_HIVEMQ
 // REMOTE BROKER
-#define SECRET_MQTTBROKER "<xxxx.hivemq.cloud>"
-#define SECRET_MQTTUSER "<user>"
-#define SECRET_MQTTPW "<password>"
+#define SECRET_MQTTBROKER "<xxx.hivemq.cloud>"
+#define SECRET_MQTTUSER "uPICOW"
+#define SECRET_MQTTPW "pPICOW"
 #define MQTT_port 8883
 #define MQTT_SECURE true
 #endif

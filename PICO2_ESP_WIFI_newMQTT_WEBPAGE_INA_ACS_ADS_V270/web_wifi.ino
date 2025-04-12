@@ -307,6 +307,7 @@ void send_MQTT_BootLog() {
     temp = " *"+String(i+1)+"*\n" + BootLog.substring(subsA,subsA+200);
     temp.toCharArray(BootLogc,210);
     mqttclient.publish(mqtt_btopic,BootLogc);
+    delay(1000); // give it some time to get msg in right order
   }
   temp = ""; // clean
 }

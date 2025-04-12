@@ -15,9 +15,9 @@ float Cfix = 8.190; // aka 5.0/3.3 / 0.185 Vdivider and hall factor
 float Ctune = 1.0;  //
 #endif
 #ifdef useACS758
-float Coffset = 2.5; // here 2.489;
+float Coffset = 2.489;
 float Cfix = -50.0; // aka / 0.020 hall factor // current reverse !
-float Ctune = 1.0;  // here not tested 
+float Ctune = 1.0;  //
 #endif
 
 float ACSxxxamp = 0.0;

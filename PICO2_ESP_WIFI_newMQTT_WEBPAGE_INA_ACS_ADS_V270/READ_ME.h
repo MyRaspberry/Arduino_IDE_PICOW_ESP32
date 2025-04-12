@@ -45,3 +45,45 @@
 
 // try print more board info if ESP32
 // https://embedded-things.blogspot.com/2021/10/install-arduino-esp32-200-on-arduino.html
+
+// _________________________________________________________ add info to the 4 board ligic:
+// it is like:
+// -1-
+// the code is for PICO W
+// and works if you select arduino board PICO xW
+// -2-
+// if you select arduino board ESPxxx
+//
+// the compiler switch
+// #ifdef ESP32   ( defined by ardunio and YOUR board selection )
+// take the code for ESP32S3
+// -3-
+// unless you enable
+// #useESP32s
+// then take the code for the old ESP32s used
+// -4-
+// if you arduino board select
+// PICO 2 W
+// the same code is used as for PICO W
+//
+// unless you enable
+// #usePICOW2
+// then it will be given other IP and topic and also different web-page content...
+//
+// all switches are used in different places in the code
+// ( but that is what they are for )
+// because without there you would have to make manual changes
+// if you use different board and want run it together with other boards.. ( like 4 boards need 4 IP / TOPIC ...)
+//
+// -5- that also means that
+// #useESP32s
+// #usePICOW2
+//
+// can both be enabled as they never work together...
+//
+// * and if you burn PICO xW it will be .217
+// * if burn a ESP32S it will be OK
+// * if burn a ESP32S3 it will fail from the esp32s code
+//
+// yes, same confusing like
+// M&M with that many colors!
