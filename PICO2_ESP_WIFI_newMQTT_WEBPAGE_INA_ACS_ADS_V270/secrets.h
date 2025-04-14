@@ -1,6 +1,7 @@
 // file: secrets.h
+#define MY_PROJECT "SITE: Thailand CNX, DEVICE: D216"  // D216 is IP .216 and D216 in topic..( unique for ONE site / LAN )
 
-//#define use4RELAY
+#define use4RELAY
 
 // I2S: currently can only select 1 INA at default x40
 //#define use_INA_219
@@ -26,7 +27,7 @@
 
 
 #define PROJECT "PICO2_ESP_WIFI_newMQTT_WEBPAGE_INA_ACS_ADS"
-#define REV "v2.7.0c"
+#define REV "v2.7.0e"
 
 #define use_boot_ms  // print boot timing
 
@@ -37,7 +38,7 @@
 
 #ifdef useESP32s
 #define FIXIP {192,168,1,214}
-#else
+#else // ESP32S3
 #define FIXIP {192,168,1,216}
 #endif
 
@@ -68,8 +69,8 @@
 #ifdef useREMOTE_BROKER_HIVEMQ
 // REMOTE BROKER
 #define SECRET_MQTTBROKER "<xxx.hivemq.cloud>"
-#define SECRET_MQTTUSER "uPICOW"
-#define SECRET_MQTTPW "pPICOW"
+#define SECRET_MQTTUSER "<user>"
+#define SECRET_MQTTPW "<password>"
 #define MQTT_port 8883
 #define MQTT_SECURE true
 #endif

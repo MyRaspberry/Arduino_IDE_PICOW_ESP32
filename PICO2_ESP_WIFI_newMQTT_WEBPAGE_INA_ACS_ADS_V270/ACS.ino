@@ -10,12 +10,12 @@
 #ifdef useACSxxx
 
 #ifdef useACS712
-float Coffset = 1.650;
+float Coffset = 1.650; // default 1.650; for 3 * 10K Vdiv
 float Cfix = 8.190; // aka 5.0/3.3 / 0.185 Vdivider and hall factor
 float Ctune = 1.0;  //
 #endif
 #ifdef useACS758
-float Coffset = 2.489;
+float Coffset = 2.5; // 5V powered board /2
 float Cfix = -50.0; // aka / 0.020 hall factor // current reverse !
 float Ctune = 1.0;  //
 #endif
@@ -23,7 +23,7 @@ float Ctune = 1.0;  //
 float ACSxxxamp = 0.0;
 
 // add filter
-float Ma = 0.15;
+float Ma = 0.3; // 0.3 weak filter // 0.1 strong filter
 float Mb = 1.0 - Ma;
 float A0signal = 0.0;
 boolean Finit = true;
@@ -49,6 +49,8 @@ void calc_ACS() {
   if ( Finit ) {
     Finit = false;
     A0signal = sensorA0val;  // ________________________ init to avoid the first 15 sec SWING IN
+    Serial.print("ACS filter init ");
+    Serial.println(sensorA0val);
   }
   if ( ACSxxxuseFilter ) {
     A0signal = Ma * sensorA0val + Mb * A0signal;

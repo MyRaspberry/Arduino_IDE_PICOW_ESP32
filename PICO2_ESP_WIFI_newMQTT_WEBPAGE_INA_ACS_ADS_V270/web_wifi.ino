@@ -460,8 +460,10 @@ input[type=submit] {\
 \
 <div style=\"background-color:#e5e5e5;padding:15px;text-align:center;\">\
   <h1>";
+  DYN_HTMLs += MY_PROJECT;
+  DYN_HTMLs += "</h1><h3>";
   DYN_HTMLs += HTML_HEADER;
-  DYN_HTMLs += "</h1>\
+  DYN_HTMLs += "</h3>\
 </div>\
 \
 <div style=\"overflow:auto\">\
