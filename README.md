@@ -21,7 +21,7 @@ BLOG links:
 
 [Arduino with PICO 2W](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=6)
 
-[Arduino with ESP32S3](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=5)
+[Arduino with ESP32S3](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=14)
 
 [revive NODE MCU ESP32s & Arduino IDE 2](https://engineering-news.org/kllfusion01/infusions/blog/blog.php?readmore=7)
 
