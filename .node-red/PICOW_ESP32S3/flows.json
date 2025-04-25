@@ -295,12 +295,14 @@
             "c9b704889489d3f7",
             "7bcb96c2d68e52bb",
             "35e1eef7c82e141d",
-            "b7a5d8e9d7ca1eb2"
+            "b7a5d8e9d7ca1eb2",
+            "0c633c1a2fffbb97",
+            "799118102f85dc56"
         ],
         "x": 14,
         "y": 1019,
         "w": 1072,
-        "h": 302
+        "h": 322
     },
     {
         "id": "9b358a16cd81ca40",
@@ -504,12 +506,14 @@
             "5cc343054100b455",
             "17d865e50fc113af",
             "ad815b5faa5641e4",
-            "64b66c0c0af92604"
+            "64b66c0c0af92604",
+            "fb4e9d3a5b9a0fcf",
+            "9a9e1326015aa496"
         ],
         "x": 44,
         "y": 559,
         "w": 1092,
-        "h": 302
+        "h": 322
     },
     {
         "id": "34569ec49fc77ed1",
@@ -740,7 +744,7 @@
             }
         },
         "site": {
-            "name": "MultiSite Dashboard V270c",
+            "name": "MultiSite Dashboard V271",
             "hideToolbar": "false",
             "allowSwipe": "false",
             "lockMenu": "true",
@@ -894,36 +898,6 @@
         "className": ""
     },
     {
-        "id": "b1c3a49b14dde6bd",
-        "type": "ui_spacer",
-        "z": "00dab516a6b3e62a",
-        "name": "spacer",
-        "group": "1d73b486082014dd",
-        "order": 2,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "f4a9f3f84907381e",
-        "type": "ui_spacer",
-        "z": "00dab516a6b3e62a",
-        "name": "spacer",
-        "group": "1d73b486082014dd",
-        "order": 4,
-        "width": 6,
-        "height": 1
-    },
-    {
-        "id": "b355eb21c0cc69a9",
-        "type": "ui_spacer",
-        "z": "00dab516a6b3e62a",
-        "name": "spacer",
-        "group": "1d73b486082014dd",
-        "order": 6,
-        "width": 2,
-        "height": 1
-    },
-    {
         "id": "dae7ede5651ba91f",
         "type": "ui_group",
         "name": "HIST_SELECT",
@@ -941,7 +915,7 @@
         "tab": "6d4dfe0ffc92f6ef",
         "order": 5,
         "disp": true,
-        "width": "30",
+        "width": 35,
         "collapse": false,
         "className": ""
     },
@@ -1125,9 +1099,79 @@
         "tab": "34a8b03539e672c1",
         "order": 1,
         "disp": true,
-        "width": 37,
+        "width": 30,
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "7f874042e29fc761",
+        "type": "ui_spacer",
+        "z": "27c566c7be19f07c",
+        "name": "spacer",
+        "group": "a35a0bb07a0caabc",
+        "order": 2,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "f889cade0a3e74eb",
+        "type": "ui_spacer",
+        "z": "27c566c7be19f07c",
+        "name": "spacer",
+        "group": "a35a0bb07a0caabc",
+        "order": 6,
+        "width": 4,
+        "height": 1
+    },
+    {
+        "id": "ba10fbac299c2e25",
+        "type": "ui_spacer",
+        "z": "00dab516a6b3e62a",
+        "name": "spacer",
+        "group": "1d73b486082014dd",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "964e6cb62b2a7e73",
+        "type": "ui_spacer",
+        "z": "00dab516a6b3e62a",
+        "name": "spacer",
+        "group": "1d73b486082014dd",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "66a66163e1b9eef5",
+        "type": "ui_spacer",
+        "z": "00dab516a6b3e62a",
+        "name": "spacer",
+        "group": "1d73b486082014dd",
+        "order": 7,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "617f368170eb4e60",
+        "type": "ui_spacer",
+        "z": "00dab516a6b3e62a",
+        "name": "spacer",
+        "group": "1d73b486082014dd",
+        "order": 9,
+        "width": 2,
+        "height": 1
+    },
+    {
+        "id": "d62b1276ddfd07a8",
+        "type": "ui_spacer",
+        "z": "00dab516a6b3e62a",
+        "name": "spacer",
+        "group": "1d73b486082014dd",
+        "order": 10,
+        "width": 35,
+        "height": 1
     },
     {
         "id": "b23904f7c5baf383",
@@ -4885,7 +4929,7 @@
         "g": "605eaa74d4639a25",
         "group": "1d73b486082014dd",
         "name": "Hist LIST",
-        "order": 7,
+        "order": 11,
         "width": 0,
         "height": 0,
         "format": "<table style=\"width:100%\">\n  <tr>\n    <th>Time UTC</th>\n    <th>Topic</th>\n    <th>Payload</th>\n  </tr>\n  \n  <tr ng-repeat=\"x in msg.payload \">\n    <td>{{msg.payload[$index].timedates}}</td>\n    <td>{{msg.payload[$index].topic}}</td>\n    <td>{{msg.payload[$index].payloads}}</td>\n  </tr>\n</table>",
@@ -4907,7 +4951,7 @@
         "g": "605eaa74d4639a25",
         "name": "",
         "group": "1d73b486082014dd",
-        "order": 5,
+        "order": 8,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -4922,7 +4966,7 @@
         "topic": "topic",
         "topicType": "msg",
         "x": 110,
-        "y": 1220,
+        "y": 1300,
         "wires": [
             [
                 "a59c90dc6d499201"
@@ -4964,7 +5008,7 @@
         "z": "00dab516a6b3e62a",
         "g": "605eaa74d4639a25",
         "name": "datarange LIST",
-        "func": "var now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour \nvar getrecs = context.get('getrecs')||epoch;\nif (msg.payload == 'up') getrecs += hmillis;\nif (msg.payload == 'down') getrecs -= hmillis;\nif (msg.payload == 'init') getrecs = epoch;\nif ( getrecs < 0 ) getrecs = 0;\nif ( getrecs > epoch ) getrecs = epoch; // limit to now\ncontext.set('getrecs',getrecs); // save back to global\n\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n//var getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_in WHERE timedate BETWEEN \"+hstart+\" AND \"+hend+\" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\n\nmsg.payload = \"from \"+hstarts+\" to \"+hends+\" UTC\"; // for debug only\nreturn msg;",
+        "func": "var now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour \nvar getrecs = context.get('getrecs')||epoch;\nif (msg.payload == 'up') getrecs += hmillis;\nif (msg.payload == 'down') getrecs -= hmillis;\nif (msg.payload == 'init') getrecs = epoch;\nif (msg.payload == 'now') getrecs = epoch; // HOME\n\nif (msg.topic == 'day') getrecs = msg.payload; // day select\n\nif ( getrecs < 0 ) getrecs = 0;\nif ( getrecs > epoch ) getrecs = epoch; // limit to now\ncontext.set('getrecs',getrecs); // save back to global\n\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n//var getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_in WHERE timedate BETWEEN \"+hstart+\" AND \"+hend+\" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\n\nmsg.payload = \"from \"+hstarts+\" to \"+hends+\" UTC\"; // for debug only\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -5364,7 +5408,7 @@
         "z": "00dab516a6b3e62a",
         "g": "844c3338d66d2f61",
         "name": "datarange TREND",
-        "func": "\nvar now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour\nvar getrecs = context.get('getrecs') || epoch;\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n\nif (msg.payload == 'up') \n{\n    getrecs += hmillis;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\nif (msg.payload == 'down')\n{\n    getrecs -= hmillis;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\nif (msg.payload == 'upd') {\n    getrecs += hmillis*24;\n    hend = getrecs;\n    hstart = hend - hmillis*24; // one day back\n}\n\nif (msg.payload == 'downd') {\n    getrecs -= hmillis*24;\n    hend = getrecs;\n    hstart = hend - hmillis*24; // one day back\n}\n\nif ((msg.payload == 'init') || (msg.payload == 'lasthour') || (msg.payload == 'refresh') ) // see last hour\n{\n    getrecs = epoch;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\n// day select\nif (msg.topic == 'day' ) {\n    hstart = msg.payload;\n    hend = hstart + hmillis*24; // one day\n    getrecs = hend; // remember in case next press is +-h +-d\n}\n\nif (getrecs < 0) getrecs = 0;\nif (getrecs > epoch) getrecs = epoch; // limit to now\ncontext.set('getrecs', getrecs); // save back to global\n\nif ( false ) {\n    node.warn(msg.topic);\n    node.warn(msg.payload);\n    node.warn(hstart)\n    node.warn(getrecs)\n}\n\nvar getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_in WHERE topic = \\\"\"+getSite+\"\\\" AND timedate BETWEEN \" + hstart + \" AND \" + hend + \" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nmsg.payload = \"from \" + hstarts + \" to \" + hends + \" UTC\"; // for debug only\n\nreturn msg;",
+        "func": "\nvar now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour\nvar getrecs = context.get('getrecs') || epoch;\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n\nif (msg.payload == 'up') \n{\n    getrecs += hmillis;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\nif (msg.payload == 'down')\n{\n    getrecs -= hmillis;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\nif (msg.payload == 'upd') {\n    getrecs += hmillis*24;\n    hend = getrecs;\n    hstart = hend - hmillis*24; // one day back\n}\n\nif (msg.payload == 'downd') {\n    getrecs -= hmillis*24;\n    hend = getrecs;\n    hstart = hend - hmillis*24; // one day back\n}\n\nif ((msg.payload == 'init') || (msg.payload == 'now') || (msg.payload == 'refresh') ) // see last hour\n{\n    getrecs = epoch;\n    hend = getrecs;\n    hstart = hend - hmillis; // one hour back\n}\n// day select\nif (msg.topic == 'day' ) {\n    hstart = msg.payload;\n    hend = hstart + hmillis*24; // one day\n    getrecs = hend; // remember in case next press is +-h +-d\n}\n\nif (getrecs < 0) getrecs = 0;\nif (getrecs > epoch) getrecs = epoch; // limit to now\ncontext.set('getrecs', getrecs); // save back to global\n\nif ( false ) {\n    node.warn(msg.topic);\n    node.warn(msg.payload);\n    node.warn(hstart)\n    node.warn(getrecs)\n}\n\nvar getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_in WHERE topic = \\\"\"+getSite+\"\\\" AND timedate BETWEEN \" + hstart + \" AND \" + hend + \" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nmsg.payload = \"from \" + hstarts + \" to \" + hends + \" UTC\"; // for debug only\n\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -5561,13 +5605,13 @@
         "width": 3,
         "height": 1,
         "passthru": false,
-        "label": "h-ome",
-        "tooltip": "last hour",
+        "label": "home",
+        "tooltip": "now",
         "color": "",
         "bgcolor": "",
         "className": "",
         "icon": "",
-        "payload": "lasthour",
+        "payload": "now",
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
@@ -5938,6 +5982,58 @@
         ]
     },
     {
+        "id": "0c633c1a2fffbb97",
+        "type": "ui_button",
+        "z": "00dab516a6b3e62a",
+        "g": "605eaa74d4639a25",
+        "name": "",
+        "group": "1d73b486082014dd",
+        "order": 6,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "home",
+        "tooltip": "now",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "now",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 1260,
+        "wires": [
+            [
+                "a59c90dc6d499201"
+            ]
+        ]
+    },
+    {
+        "id": "799118102f85dc56",
+        "type": "ui_date_picker",
+        "z": "00dab516a6b3e62a",
+        "g": "605eaa74d4639a25",
+        "name": "",
+        "label": "day",
+        "group": "1d73b486082014dd",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "topic": "day",
+        "topicType": "str",
+        "className": "",
+        "x": 110,
+        "y": 1220,
+        "wires": [
+            [
+                "a59c90dc6d499201"
+            ]
+        ]
+    },
+    {
         "id": "276e4c63874ca929",
         "type": "comment",
         "z": "27c566c7be19f07c",
@@ -6236,7 +6332,7 @@
         "g": "e6aabb0c4de5e395",
         "group": "a35a0bb07a0caabc",
         "name": "LOG LIST",
-        "order": 4,
+        "order": 8,
         "width": 0,
         "height": 0,
         "format": "<table style=\"width:100%\">\n  <tr>\n    <th>Time UTC</th>\n    <th>Topic</th>\n    <th>Payload</th>\n  </tr>\n  \n  <tr ng-repeat=\"x in msg.payload \">\n    <td>{{msg.payload[$index].timedates}}</td>\n    <td>{{msg.payload[$index].topic}}</td>\n    <td>{{msg.payload[$index].payloads}}</td>\n  </tr>\n</table>",
@@ -6258,7 +6354,7 @@
         "g": "e6aabb0c4de5e395",
         "name": "",
         "group": "a35a0bb07a0caabc",
-        "order": 3,
+        "order": 7,
         "width": 3,
         "height": 1,
         "passthru": false,
@@ -6272,8 +6368,8 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
-        "y": 760,
+        "x": 130,
+        "y": 840,
         "wires": [
             [
                 "cf3d19f339cafa63"
@@ -6301,7 +6397,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 140,
+        "x": 130,
         "y": 720,
         "wires": [
             [
@@ -6315,7 +6411,7 @@
         "z": "27c566c7be19f07c",
         "g": "e6aabb0c4de5e395",
         "name": "datarange LIST",
-        "func": "var now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour \nvar getrecs = context.get('getrecs')||epoch;\nif (msg.payload == 'up') getrecs += hmillis;\nif (msg.payload == 'down') getrecs -= hmillis;\nif (msg.payload == 'init') getrecs = epoch;\nif ( getrecs < 0 ) getrecs = 0;\nif ( getrecs > epoch ) getrecs = epoch; // limit to now\ncontext.set('getrecs',getrecs); // save back to global\n\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n//var getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_log WHERE timedate BETWEEN \"+hstart+\" AND \"+hend+\" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\n\nmsg.payload = \"from \"+hstarts+\" to \"+hends+\" UTC\"; // for debug only\nreturn msg;",
+        "func": "var now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour \nvar getrecs = context.get('getrecs')||epoch;\nif (msg.payload == 'up') getrecs += hmillis;\nif (msg.payload == 'down') getrecs -= hmillis;\nif (msg.payload == 'init') getrecs = epoch;\nif (msg.payload == 'now') getrecs = epoch; // HOME\n\nif (msg.topic == 'day') getrecs = msg.payload; // day select\n\nif ( getrecs < 0 ) getrecs = 0;\nif ( getrecs > epoch ) getrecs = epoch; // limit to now\ncontext.set('getrecs',getrecs); // save back to global\n\nvar hend = getrecs;\nvar hstart = hend - hmillis; // one hour back from now\n\n//var getSite = flow.get('getSite');\n\nmsg.topic = \"SELECT * FROM mqtt_log WHERE timedate BETWEEN \"+hstart+\" AND \"+hend+\" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\n\n\nmsg.payload = \"from \"+hstarts+\" to \"+hends+\" UTC\"; // for debug only\nreturn msg;",
         "outputs": 1,
         "timeout": "",
         "noerr": 0,
@@ -6425,8 +6521,8 @@
         "z": "27c566c7be19f07c",
         "g": "e6aabb0c4de5e395",
         "group": "a35a0bb07a0caabc",
-        "order": 2,
-        "width": 6,
+        "order": 3,
+        "width": 9,
         "height": 1,
         "name": "",
         "label": "time range",
@@ -6481,5 +6577,57 @@
         "x": 270,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "fb4e9d3a5b9a0fcf",
+        "type": "ui_button",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "",
+        "group": "a35a0bb07a0caabc",
+        "order": 5,
+        "width": 3,
+        "height": 1,
+        "passthru": false,
+        "label": "home",
+        "tooltip": "now",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "now",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 130,
+        "y": 800,
+        "wires": [
+            [
+                "cf3d19f339cafa63"
+            ]
+        ]
+    },
+    {
+        "id": "9a9e1326015aa496",
+        "type": "ui_date_picker",
+        "z": "27c566c7be19f07c",
+        "g": "e6aabb0c4de5e395",
+        "name": "",
+        "label": "day",
+        "group": "a35a0bb07a0caabc",
+        "order": 4,
+        "width": 4,
+        "height": 1,
+        "passthru": true,
+        "topic": "day",
+        "topicType": "str",
+        "className": "",
+        "x": 130,
+        "y": 760,
+        "wires": [
+            [
+                "cf3d19f339cafa63"
+            ]
+        ]
     }
 ]
