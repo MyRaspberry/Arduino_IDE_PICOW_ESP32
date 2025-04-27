@@ -40,6 +40,14 @@
         "env": []
     },
     {
+        "id": "a5358d3d0c90517c",
+        "type": "tab",
+        "label": "DAYREPORT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "27c566c7be19f07c",
         "type": "tab",
         "label": "LOG_DB",
@@ -299,7 +307,7 @@
             "0c633c1a2fffbb97",
             "799118102f85dc56"
         ],
-        "x": 14,
+        "x": 64,
         "y": 1019,
         "w": 1072,
         "h": 322
@@ -514,6 +522,34 @@
         "y": 559,
         "w": 1092,
         "h": 322
+    },
+    {
+        "id": "3f9f79f585427bbc",
+        "type": "group",
+        "z": "a5358d3d0c90517c",
+        "name": "",
+        "style": {
+            "fill": "#ffff7f",
+            "label": true
+        },
+        "nodes": [
+            "07660866418c94d4",
+            "629f53919e50c1cd",
+            "10b651df7e177846",
+            "85e0b07cc157c6fe",
+            "780360f3ed8c88a5",
+            "5b8ef184225f068c",
+            "54c0894c669f141e",
+            "798bd16e52a9c548",
+            "9fa8e9b86f179e20",
+            "15c24677a1e02bc1",
+            "4da8ebb30893cb82",
+            "eb68b982df457596"
+        ],
+        "x": 14,
+        "y": 39,
+        "w": 1252,
+        "h": 462
     },
     {
         "id": "34569ec49fc77ed1",
@@ -3904,7 +3940,7 @@
         "type": "comment",
         "z": "adb1ad6d0accd50e",
         "g": "8d14613e66deae4a",
-        "name": "assuming that mqtt_in is from local RPI mosquitto we want open up the /data ANG the /log to the world by copy them to HIVEMQ",
+        "name": "assuming that mqtt_in is from local RPI mosquitto we want open up the /data AND the /log to the world by copy them to HIVEMQ",
         "info": "",
         "x": 510,
         "y": 680,
@@ -4837,8 +4873,9 @@
         "z": "00dab516a6b3e62a",
         "g": "9b358a16cd81ca40",
         "name": "projects TOPIC array",
-        "func": "// output goes to a UI DROPDOWN selctor:\n\n// The Options may be configured by inputting msg.options containing an array.\n// If just text then the value will be the same as the label, \n// otherwise you can specify both by using an object of \"label\": \"value\" pairs:\n// [\"Choice 1\", \"Choice 2\", { \"Choice 3\": \"3\" }]\n\nif (msg.payload.length > 0) {\n    var data = \"[\";\n\n    for (var i = 0; i < msg.payload.length; i++) {  // take the dbrecord appart\n\n        //var p_id = msg.payload[i].id;\n        var p_name = msg.payload[i].p_name;\n        var p_topic = msg.payload[i].p_topic;\n        //var p_rem = msg.payload[i].p_rem;\n\n\n        data += \"{ \";\n        //data += \"\\\"id\\\":\\\"\" + p_id + \"\\\"\";\n        //data += \" \\\"name\\\":\\\"\" + p_name + \"\\\"\";\n        //data += \" \\\"topic\\\":\\\"\" + p_topic + \"\\\"\";\n        //data += \", \\\"remark\\\":\\\"\" + p_rem + \"\\\"\";\n\n        data += \"\\\"\" + p_name + \", \"+p_topic+\"\\\":\\\"\" + p_topic + \"\\\"\";\n\n        data += \" }\";\n        if (i < (msg.payload.length - 1)) {\n            data += \",\"\n        } else {\n            data += \"]\"\n        }\n    }\n\n    var jsondata = JSON.parse(data);\n\n    msg.options = jsondata;\n    msg.topic=\"valid topics\";\n    msg.payload = \"\";\n}\n\nreturn msg;\n",
+        "func": "// output goes to a UI DROPDOWN selctor:\n\n// The Options may be configured by inputting msg.options containing an array.\n// If just text then the value will be the same as the label, \n// otherwise you can specify both by using an object of \"label\": \"value\" pairs:\n// [\"Choice 1\", \"Choice 2\", { \"Choice 3\": \"3\" }]\n\nif (msg.payload.length > 0) {\n    var data = \"[\";\n\n    for (var i = 0; i < msg.payload.length; i++) {  // take the dbrecord appart\n\n        //var p_id = msg.payload[i].id;\n        var p_name = msg.payload[i].p_name;\n        var p_topic = msg.payload[i].p_topic;\n        //var p_rem = msg.payload[i].p_rem;\n        \n        // try to save the TOPICs as global arrary\n        global.set(\"TOPICS[\" + i + \"]\", p_topic);\n\n        data += \"{ \";\n        //data += \"\\\"id\\\":\\\"\" + p_id + \"\\\"\";\n        //data += \" \\\"name\\\":\\\"\" + p_name + \"\\\"\";\n        //data += \" \\\"topic\\\":\\\"\" + p_topic + \"\\\"\";\n        //data += \", \\\"remark\\\":\\\"\" + p_rem + \"\\\"\";\n\n        data += \"\\\"\" + p_name + \", \"+p_topic+\"\\\":\\\"\" + p_topic + \"\\\"\";\n\n        data += \" }\";\n        if (i < (msg.payload.length - 1)) {\n            data += \",\"\n        } else {\n            data += \"]\"\n        }\n    }\n\n    var jsondata = JSON.parse(data);\n\n    msg.options = jsondata;\n    msg.topic=\"valid topics\";\n    msg.payload = \"\";\n}\n\nreturn msg;\n",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
         "initialize": "",
         "finalize": "",
@@ -4913,7 +4950,7 @@
         "sqlquery": "msg.topic",
         "sql": "",
         "name": "",
-        "x": 720,
+        "x": 770,
         "y": 1180,
         "wires": [
             [
@@ -4938,7 +4975,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 980,
+        "x": 1030,
         "y": 1280,
         "wires": [
             []
@@ -4965,7 +5002,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 160,
         "y": 1300,
         "wires": [
             [
@@ -4994,7 +5031,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 160,
         "y": 1180,
         "wires": [
             [
@@ -5015,7 +5052,7 @@
         "initialize": "var now = new Date();\nvar epoch = now.getTime(); // in millis\n\nvar getrecs = context.get('getrecs') || epoch;\n\ncontext.set('getrecs', getrecs); // save back to global\n",
         "finalize": "",
         "libs": [],
-        "x": 340,
+        "x": 390,
         "y": 1180,
         "wires": [
             [
@@ -5039,7 +5076,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 1020,
         "y": 1100,
         "wires": []
     },
@@ -5234,7 +5271,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 980,
+        "x": 1030,
         "y": 1180,
         "wires": []
     },
@@ -5252,7 +5289,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 970,
+        "x": 1020,
         "y": 1240,
         "wires": []
     },
@@ -5274,7 +5311,7 @@
         "g": "605eaa74d4639a25",
         "name": "ui HIST_LIST function: one hour from DB",
         "info": "",
-        "x": 200,
+        "x": 250,
         "y": 1100,
         "wires": []
     },
@@ -5290,7 +5327,7 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 550,
+        "x": 600,
         "y": 1260,
         "wires": [
             [
@@ -5637,7 +5674,7 @@
         "format": "{{msg.payload}}",
         "layout": "col-center",
         "className": "",
-        "x": 990,
+        "x": 1040,
         "y": 1140,
         "wires": []
     },
@@ -5663,7 +5700,7 @@
         "topic": "start",
         "payload": "init",
         "payloadType": "str",
-        "x": 120,
+        "x": 170,
         "y": 1140,
         "wires": [
             [
@@ -5719,7 +5756,7 @@
         "g": "605eaa74d4639a25",
         "name": "table: mqtt_in   (id,timedate,timedates,topic,payloads, A0V, A1V, A2V,PS_Temp ) ",
         "info": "",
-        "x": 320,
+        "x": 370,
         "y": 1060,
         "wires": []
     },
@@ -5731,8 +5768,9 @@
         "name": "set flow variable: getSite",
         "func": "var getSite = flow.get('getSite');\nvar oldSite = getSite;\ngetSite = msg.payload;\nflow.set('getSite', getSite); // save back to global\nvar newSite = getSite;\nmsg.topic = \"select\";\nmsg.payload=\"refresh\"; // \"old: \"+oldSite+\",\\nnew: \"+newSite;\nreturn msg;",
         "outputs": 1,
+        "timeout": "",
         "noerr": 0,
-        "initialize": "// Code added here will be run once\n// whenever the node is started.\nvar getSite = flow.get('getSite') || \"PICOW-S31/Site1\";\nflow.set('getSite', getSite); // save back to global\n",
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nvar getSite = flow.get('getSite') || \"ESP32S3/D216/data\";\nflow.set('getSite', getSite); // save back to global\n",
         "finalize": "",
         "libs": [],
         "x": 610,
@@ -6002,7 +6040,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 110,
+        "x": 160,
         "y": 1260,
         "wires": [
             [
@@ -6025,13 +6063,262 @@
         "topic": "day",
         "topicType": "str",
         "className": "",
-        "x": 110,
+        "x": 160,
         "y": 1220,
         "wires": [
             [
                 "a59c90dc6d499201"
             ]
         ]
+    },
+    {
+        "id": "07660866418c94d4",
+        "type": "function",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "datarange DAY-REPORT",
+        "func": "\nvar now = new Date();\nvar epoch = now.getTime(); // in millis\nvar hmillis = 3600000; // one hour\nvar hend = epoch;\nvar hstart = hend - hmillis * 24; // one day back from now\n\n\n//var getSite = \"PICOW/D217/data\";\nvar getSite = msg.payload;\n\nmsg.topic = \"SELECT * FROM mqtt_in WHERE topic = \\\"\"+getSite+\"\\\" AND timedate BETWEEN \" + hstart + \" AND \" + hend + \" ;\"\n\nconst hstarts = (new Date(hstart)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nconst hends = (new Date(hend)).toUTCString().slice(5, 25).replace(/-/g, \"/\").replace(\"T\", \" \");\nmsg.payload = \"from \" + hstarts + \" to \" + hends + \" UTC\"; // for debug only\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 610,
+        "y": 180,
+        "wires": [
+            [
+                "629f53919e50c1cd"
+            ]
+        ]
+    },
+    {
+        "id": "629f53919e50c1cd",
+        "type": "sqlite",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "mydb": "5855394b5a9476ac",
+        "sqlquery": "msg.topic",
+        "sql": "",
+        "name": "",
+        "x": 910,
+        "y": 180,
+        "wires": [
+            [
+                "10b651df7e177846",
+                "4da8ebb30893cb82"
+            ]
+        ]
+    },
+    {
+        "id": "10b651df7e177846",
+        "type": "csv",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": "",
+        "hdrout": "all",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "topic,timedates,PS_Temp,A0,A1,A2,VDC,ADC,POW",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 490,
+        "y": 460,
+        "wires": [
+            [
+                "85e0b07cc157c6fe"
+            ]
+        ]
+    },
+    {
+        "id": "85e0b07cc157c6fe",
+        "type": "file",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "",
+        "filename": "path",
+        "filenameType": "msg",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "true",
+        "encoding": "none",
+        "x": 700,
+        "y": 460,
+        "wires": [
+            [
+                "780360f3ed8c88a5"
+            ]
+        ]
+    },
+    {
+        "id": "780360f3ed8c88a5",
+        "type": "debug",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "write CSV",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1140,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5b8ef184225f068c",
+        "type": "inject",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "59 23 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "report time",
+        "payload": "iso",
+        "payloadType": "date",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "54c0894c669f141e"
+            ]
+        ]
+    },
+    {
+        "id": "15c24677a1e02bc1",
+        "type": "debug",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "site cycler",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1120,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "798bd16e52a9c548",
+        "type": "function",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "site cycler",
+        "func": "var TOPICS = [];\nTOPICS = global.get(\"TOPICS\");\n//node.warn(TOPICS);\nvar countmax = TOPICS.length;\nvar counter = flow.get('counter');  // starts with 1\n//node.warn(\"count: \"+counter+ \", countmax: \" + countmax + \", topic: \"+TOPICS[counter-1]);\n\nif ( counter > 0 ) { \n    msg.payload = TOPICS[counter - 1];\n    msg.path = \"/home/pi/Projects/PICO_W/\" + TOPICS[counter - 1].replace(\"/data\", \"\").replace(\"/\", \"_\") + \".csv\";\n\n    if ( counter >= countmax ) {\n        flow.set('counter', 0); // stops\n    } else {\n        flow.set('counter', counter+1);\n    }\n    return msg;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\n\nvar counter = flow.get('counter') || 1;\nflow.set('counter', counter); // save back to global\n",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "15c24677a1e02bc1",
+                "9fa8e9b86f179e20",
+                "07660866418c94d4"
+            ]
+        ]
+    },
+    {
+        "id": "9fa8e9b86f179e20",
+        "type": "delay",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "3",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "798bd16e52a9c548"
+            ]
+        ]
+    },
+    {
+        "id": "54c0894c669f141e",
+        "type": "function",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "site init",
+        "func": "flow.set('counter', 1);\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "\nvar counter = flow.get('counter') || 1;\nflow.set('counter', counter); // save back to global\n",
+        "finalize": "",
+        "libs": [],
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "798bd16e52a9c548"
+            ]
+        ]
+    },
+    {
+        "id": "4da8ebb30893cb82",
+        "type": "debug",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "day records",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "eb68b982df457596",
+        "type": "comment",
+        "z": "a5358d3d0c90517c",
+        "g": "3f9f79f585427bbc",
+        "name": "start 16:59 to match UTC?",
+        "info": "",
+        "x": 470,
+        "y": 80,
+        "wires": []
     },
     {
         "id": "276e4c63874ca929",
